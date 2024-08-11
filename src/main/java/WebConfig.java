@@ -9,8 +9,9 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("*")  // Pode ser substituído pelo domínio específico, como "https://seu-dominio.com"
+                .allowedOrigins("https://web-users-api-production.up.railway.app")  // Pode ser substituído pelo domínio específico, como "https://seu-dominio.com"
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD")
-                .allowedHeaders("*");
+                .allowedHeaders("*")
+                .allowCredentials(true);
     }
 }
